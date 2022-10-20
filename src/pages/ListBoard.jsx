@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import BoardService from '../service/BoardService';
 
-export default function ListBoard () {
+class ListBoard extends Component {
     constructor(props) {
         super(props)
         // # 1.
         this.state = { 
             boards: []
         }
-		
+	
     }
     // # 2. 
-    componentDidMount() {
+    getDerivedStateFromProps() {
         BoardService.getBoards().then((res) => {
             this.setState({ boards: res.data});
         });
     }
 
     // # 3.
+    render() {
         return (
             <div>
                 <h2 className="text-center">Boards List</h2>
@@ -53,6 +54,7 @@ export default function ListBoard () {
                     </table>
                 </div>
         );
-};
+    }
+}
 
 export default ListBoard;
