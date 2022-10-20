@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Breadcrumb, Layout, Menu, Button } from "antd";
-import React from "react";
+import { Layout, Menu, Button } from "antd";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 const { Header, Content, Footer } = Layout;
 
 const style = {
@@ -10,11 +11,20 @@ const style = {
 const margin10 = {
   margin: "6px",
 };
+
 export default function Home() {
   let navigate = useNavigate();
   function handleClick() {
     navigate("/");
   }
+  //   const [writing, setWriting] = useState("");
+
+  //   useEffect(() => {
+  //     axios
+  //       .get("/api/writing")
+  //       .then((response) => setWriting(response.data))
+  //       .cathc((error) => console.log(error));
+  //   }, []);
 
   return (
     <>
@@ -33,25 +43,17 @@ export default function Home() {
         </Header>
         <Content
           style={{
-            padding: "0 50px",
+            padding: "70px 50px 9px",
           }}
         >
-          {/* <Breadcrumb
-            style={{
-              margin: "16px 0",
-            }}
-          >
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb> */}
+          <h3>게시판</h3>
           <div
             className="site-layout-content"
             style={{
-              height: "619px",
+              height: "540px",
             }}
           >
-            Content/ This is HOME
+            게시판
           </div>
         </Content>
         <Footer
@@ -59,7 +61,7 @@ export default function Home() {
             textAlign: "center",
           }}
         >
-          Ant Design ©2018 Created by Ant UED
+          Study Be Happy ©2022 Created by CAPJJANG
         </Footer>
       </Layout>
     </>

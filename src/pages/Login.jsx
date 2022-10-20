@@ -14,10 +14,15 @@ const sort = {
   justifyContent: "center",
   alignItems: "center",
 };
+const USERNAME_KEY = "username";
+const USERPASSWORD_KEY = "password";
 
 const Login = () => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    // 예비로 저장
+    localStorage.setItem(USERNAME_KEY, values.username);
+    localStorage.setItem(USERPASSWORD_KEY, values.password);
   };
 
   return (

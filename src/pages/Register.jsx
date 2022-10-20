@@ -4,6 +4,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -79,6 +80,9 @@ const StyledForm = styled(Form)`
     margin: 0px;
   }
 `;
+
+const HIDDEN_CLASSNAME = "hidden";
+
 const Register = () => {
   const [form] = Form.useForm();
   let navigate = useNavigate();
