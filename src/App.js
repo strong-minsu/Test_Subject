@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/board" component={ListBoard}></Route>
+      {/* <Route path="/board" component={<ListBoard />}></Route> */}
     </Routes>
   );
 }
