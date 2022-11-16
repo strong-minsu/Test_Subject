@@ -10,7 +10,7 @@ class ListBoard extends Component {
     };
   }
   // # 2.
-  getDerivedStateFromProps() {
+  componentDidMount() {
     BoardService.getBoards().then((res) => {
       this.setState({ boards: res.data });
     });
@@ -21,6 +21,7 @@ class ListBoard extends Component {
     return (
       <div>
         <h2 className="text-center">Boards List</h2>
+        <hr />
         <div className="row">
           <table className="table table-striped table-bordered">
             <thead>
@@ -30,8 +31,8 @@ class ListBoard extends Component {
                 <th>작성자 </th>
                 <th>작성일 </th>
                 <th>갱신일 </th>
-                <th>좋아요수</th>
-                <th>조회수</th>
+                <th>좋아요수 </th>
+                <th>조회수 </th>
               </tr>
             </thead>
             <tbody>
