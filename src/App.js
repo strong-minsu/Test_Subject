@@ -1,4 +1,5 @@
 import "antd/dist/antd.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
